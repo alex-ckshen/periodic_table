@@ -220,7 +220,7 @@
         .content-wrapper {
             flex: 1;
             overflow-y: auto;
-            padding: 0 40px 20px 20px; /* Adjusted right padding to ensure 20px space */
+            padding: 0 40px 20px 20px; /* Adjusted right padding for 20px space from text to right edge */
             box-sizing: border-box;
             mask-image: linear-gradient(to bottom, transparent, black 20px, black calc(100% - 20px), transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, transparent, black 20px, black calc(100% - 20px), transparent 100%);
@@ -247,7 +247,7 @@
             border-radius: 6px;
             backdrop-filter: blur(5px);
             cursor: pointer;
-            transition: transform 0.05s linear; /* Optimized for smoother scrolling */
+            transition: transform 0.05s linear; /* Optimized for smooth scrolling */
             will-change: transform; /* Optimize rendering */
         }
         .detail-content h2 {
@@ -299,9 +299,11 @@
     </style>
 </head>
 <body>
+    <!-- Your existing body content goes here -->
+    <!-- Ensure the following structure exists or is adapted to your existing code -->
     <div class="size-adjust-container">
-        <label for="sizeSlider" class="size-label">調整大小</label>
-        <input type="range" id="sizeSlider" min="0.8" max="1.5" step="0.01" value="1.2">
+        <label class="size-label" for="sizeSlider">調整大小</label>
+        <input type="range" id="sizeSlider" min="0.5" max="1.5" value="0.8" step="0.1">
     </div>
 
     <div class="periodic-table-container" id="periodicTableContainer">
@@ -1047,6 +1049,22 @@
             </div>
         </div>
     </div>
+    
+    <div class="detail-overlay">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2>元素名稱</h2>
+                <button class="exit-button">×</button>
+            </div>
+            <div class="content-wrapper">
+                <p>元素詳細資訊...</p>
+            </div>
+            <div class="custom-scrollbar">
+                <div class="scrollbar-thumb"></div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Get references to the DOM elements for the detail overlay
         const overlay = document.getElementById('detailOverlay');
