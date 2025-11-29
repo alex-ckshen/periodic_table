@@ -745,7 +745,7 @@
                 window.addEventListener('resize', handleResize);
 
                 // Load Markdown Data
-                fetch('info.md')
+                fetch('element.md')
                     .then(response => {
                         if (!response.ok) throw new Error("Markdown file not found");
                         return response.text();
@@ -763,7 +763,7 @@
                             return newData;
                         });
                     })
-                    .catch(err => console.error("Failed to load info.md", err));
+                    .catch(err => console.error("Failed to load element.md", err));
 
                 return () => window.removeEventListener('resize', handleResize);
             }, []);
